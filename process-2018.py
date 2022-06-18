@@ -3,10 +3,7 @@ from pandas import DataFrame
 
 
 def concatenate(dfs: list[DataFrame]) -> DataFrame:
-    complete_df = dfs[0]
-    for df in dfs[1:]:
-        complete_df = pd.concat([complete_df, df], axis=0, ignore_index=True)
-    return complete_df
+    return pd.concat(dfs, axis=0, ignore_index=True)
 
 
 def create_municipio_results(results: DataFrame) -> DataFrame:
