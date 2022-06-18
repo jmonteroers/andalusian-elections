@@ -40,7 +40,7 @@ if __name__ == "__main__":
     from pathlib import Path
 
     INPUT_PATH = Path(__file__).parent / "input" / "2018"
-    OUTPUT_PATH = Path(__file__).parent / "output" / "2018"
+    OUTPUT_PATH = Path(__file__).parent / "processed" / "2018"
     dfs = [pd.read_csv(filepath, sep=";", dtype="object") for filepath in INPUT_PATH.glob("*.csv")]
     results = concatenate(dfs)
     results = results.loc[results["Codcir"] != "Total"]
