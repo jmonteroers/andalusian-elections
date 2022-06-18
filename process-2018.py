@@ -5,7 +5,7 @@ from pandas import DataFrame
 def concatenate(dfs: list[DataFrame]) -> DataFrame:
     complete_df = dfs[0]
     for df in dfs[1:]:
-        complete_df = complete_df.append(df)
+        complete_df = pd.concat([complete_df, df], axis=0, ignore_index=True)
     return complete_df
 
 
@@ -33,7 +33,6 @@ def create_party_results(results: DataFrame) -> DataFrame:
     ]
     parties = parties.melt(id_vars=["Codcir", "Codmun", "Municipio"], var_name="Party", value_name="Votes")
     parties["Votes"].fillna("0", inplace=True)
-    breakpoint()
     return parties
 
 
