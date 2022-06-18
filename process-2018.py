@@ -48,5 +48,5 @@ if __name__ == "__main__":
     party_res = create_party_results(results)
 
     # saving
-    municipio_res.to_csv(OUTPUT_PATH / "municipios-2018.csv")
-    party_res.to_csv(OUTPUT_PATH / "parties-2018.csv")
+    municipio_res.to_csv(OUTPUT_PATH / "municipios-2018.csv", index=False)
+    party_res.to_csv(OUTPUT_PATH / "parties-2018.csv", index=False)
